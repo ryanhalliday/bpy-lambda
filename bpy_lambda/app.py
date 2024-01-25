@@ -27,6 +27,11 @@ def lambda_handler(event, context):
         API Gateway return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
+    # Example SQS message. They come in batches.
+    # for record in event['Records']:
+    #     data = json.loads(record['body'])
+    #     # Process your message here.
+
     # Example downloading from S3
     # s3 = boto3.client('s3')
     # s3.download_file(os.getenv('S3_BUCKET'), 'WaterBottle.glb', '/tmp/WaterBottle.glb')
