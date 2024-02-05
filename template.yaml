@@ -48,6 +48,8 @@ Resources:
           Type: SQS # More info about SQS Event Source: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#sqs
           Properties:
             Queue: !GetAtt SimpleQueue.Arn
+            # You probably want a BatchSize of 1 if you are running heavy jobs.
+            # BatchSize: 1
         # API GATEWAY - Uncomment if you want to use API GW as trigger
         # BpyLambdaApi:
         #   Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

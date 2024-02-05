@@ -86,6 +86,12 @@ But if you want to do that, who am I to stop you. Uncomment the `BpyLambdaApi` s
 
 We use [ranchcomputing/blender-cpu-image](https://github.com/ranchcomputing/blender-cpu-image/pkgs/container/blender-cpu-image) for the base container, so edit the `Dockerfile` to change version. 
 
+## BatchSize
+
+The default `BatchSize` is 10 and there is an example line in `template.yaml` to set it to 1.
+
+The timeout for a lambda function is for all batch items, not per item. So if you have long running functions it is definitely a good idea to change this to 1.
+
 
 ## I don't want to use SAM, give me raw Lambda
 
