@@ -8,6 +8,8 @@ This uses AWS SAM for deployment and configuration so you should [Install](https
 
 **Current Blender version: 3.6**
 
+You can find more instructions and examples on using it on [my blog](https://blog.ryanhalliday.com/2024/02/blender-bpy-on-aws-lambda.html).
+
 ## How to use
 
 Download this repository or use as a [Github Template](https://github.com/new?template_name=bpy-lambda&template_owner=ry167).
@@ -84,7 +86,11 @@ But if you want to do that, who am I to stop you. Uncomment the `BpyLambdaApi` s
 
 ## Changing the Blender version
 
-We use [ranchcomputing/blender-cpu-image](https://github.com/ranchcomputing/blender-cpu-image/pkgs/container/blender-cpu-image) for the base container, so edit the `Dockerfile` to change version. 
+You can see a list of bpy versions published on PyPI here: https://pypi.org/project/bpy/#history
+
+Change the version string in `Dockerfile` to match the version you want.
+
+`bpy` is installed outside of your `requirements.txt` so that the image doesn't have to be rebuilt as much, but you can shift it there if you prefer.
 
 ## BatchSize
 
@@ -112,6 +118,7 @@ AWS can be a lot to deal with. If I did something wrong, please raise an issue a
 - [ ] Test out if it is a good idea to mount an EFS volume as a cache for downloaded resources
 - [ ] Try it out with layers
 - [ ] I also wrote code for `blender-lambda` with SAM. If you want that, send me a message or raise an issue. I like it less than the `bpy` solution though. 
+- [ ] Consider compiling `bpy` rather than installing from PyPI
 
 
 ## Resources
