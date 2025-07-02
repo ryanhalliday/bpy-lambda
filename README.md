@@ -6,7 +6,7 @@ You can make it run with SQS messages (_recommended_) or HTTP calls via API Gate
 
 This uses AWS SAM for deployment and configuration so you should [Install](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) that and all it's requirements (aws cli/docker/python3).
 
-**Current Blender version: 3.6**
+**Current Blender version: 4.4**
 
 You can find more instructions and examples on using it on [my blog](https://blog.ryanhalliday.com/2024/02/blender-bpy-on-aws-lambda.html).
 
@@ -17,8 +17,6 @@ Download this repository or use as a [Github Template](https://github.com/new?te
 Edit `bpy_lambda/app.py` ensuring your code runs from the `lambda_handler(event, context)` function
 
 This is a pretty basic AWS SAM setup, so go read the instructions on how to use that for the most part. 
-
-_**Mac OS / M1 / M2 Note:** This probably won't work due to QEMU / Docker bugs. Spin up a VM or remote server and do all the build steps there._
 
 ```bash
 # Build the docker container

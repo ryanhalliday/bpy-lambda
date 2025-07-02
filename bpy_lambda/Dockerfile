@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.11
 
 RUN python -m pip install awslambdaric
 
@@ -22,7 +22,9 @@ RUN apt-get update && apt-get install -y \
     # libSM.so.6 needed since 3.5.1 apparently
     libsm6
 
-RUN python -m pip install bpy==3.6.0
+RUN python -m pip install "numpy<2.0" 
+
+RUN python -m pip install bpy==4.4.0
 
 ARG FUNCTION_DIR="/home/app/"
 RUN mkdir -p ${FUNCTION_DIR}
